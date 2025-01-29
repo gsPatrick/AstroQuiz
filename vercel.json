@@ -5,6 +5,10 @@
         "destination": "/agina-aniversario.html"
       },
       {
+        "source": "/picture-page",
+        "destination": "/pagina-mao-tirarFoto.html"
+      },
+      {
         "source": "/hand-placement",
         "destination": "/pagina-colocar-mao.html"
       },

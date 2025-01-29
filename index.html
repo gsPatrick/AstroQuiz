@@ -7,10 +7,13 @@
 </head>
 
 <style>
-
-
-    body{
+    body {
         background-color: #1e3b48;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh; /* Garantir que o body ocupe a altura total da tela */
     }
 
     h1{
@@ -38,15 +41,20 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        padding: 0 20px;
     }
 
     .titulo-relatorio {
         text-align: center;
+        font-size: 1.8rem; /* Reduzir o tamanho da fonte para telas menores */
     }
+
 
     .descricao-pagina, .texto-escolha-genero{
         text-align: center;
-        font-size: 22px ;
+        font-size: 1.2rem; /* Reduzir o tamanho da fonte para telas menores */
+        line-height: 1.4; /* Ajustar o espaçamento entre linhas */
+
     }
 
     .card-generos{
@@ -54,6 +62,9 @@
         justify-content: center;
         align-items: center;
         flex-direction: row;
+        flex-wrap: wrap;
+        padding: 0 20px; /* Adicionar padding horizontal para telas menores */
+        margin-top: 20px; /* Adicionar espaçamento acima do card-generos */
     }
 
     .imagem-genero{
@@ -61,9 +72,9 @@
     }
 
     .link-genero {
-        text-decoration: none; /* Remove o sublinhado do link */
-        color: inherit; /* Herda a cor do texto do elemento pai */
-        display: block; /* Faz o link ocupar todo o espaço do card */
+        text-decoration: none;
+        color: inherit;
+        display: block;
     }
 
     .feminino, .masculino, .naoBinario{
@@ -72,36 +83,69 @@
         justify-content: center;
         align-items: center;
         background-color: #2d5668;
-        padding-block: 30px;
-        padding-bottom: 45px;
-        padding-inline: 35px;
+        padding-block: 20px;
+        padding-bottom: 30px;
+        padding-inline: 25px;
         border-radius: 20px;
-
         cursor: pointer;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+        margin: 10px; /* Adicionar margem entre os cards */
+        max-width: 150px; /* Limitar a largura dos cards */
     }
-    
+
     .feminino:hover, .masculino:hover, .naoBinario:hover {
-        /* Efeito de flutuar */
         transform: translateY(-10px);
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
 
     .masculino{
-
-        margin-inline: 25px;
+        margin-inline: 0px;
     }
 
     .texto-genero{
         color: white;
-        font-size: 20px;
+        font-size: 1.1rem; /* Reduzir o tamanho da fonte para telas menores */
     }
 
+    /* Media Queries para telas menores (celulares) */
+    @media (max-width: 600px) {
+        .nav {
+            margin-top: 30px;
+        }
+        .logo-image {
+            width: 40px;
+            margin-right: 10px;
+        }
 
+        .titulo-relatorio {
+             font-size: 1.5rem;
+         }
+
+         .descricao-pagina, .texto-escolha-genero {
+            font-size: 1rem;
+          }
+          .card-generos {
+                margin-top: 10px;
+            }
+         .feminino, .masculino, .naoBinario {
+            padding-block: 15px;
+            padding-bottom: 20px;
+            padding-inline: 20px;
+            margin: 10px 5px; /* Reduzir as margens */
+             max-width: 120px; /* Reduzir a largura dos cards */
+        }
+         .imagem-genero{
+                width: 50px;
+             }
+
+        .texto-genero {
+               font-size: 1rem; /* Reduzir o tamanho da fonte para telas menores */
+          }
+
+    }
 </style>
 
 <body>
-
     <div class="nav">
         <div class="logo">
             <img class="logo-image" src="https://sub.astroline.today/static/media/logo.1f4466ec692d9275dad4.webp" alt="">
@@ -148,7 +192,6 @@
                 </card-tituilo>
             </div>
         </a>
-    </div>
     </div>
     
     <script>
