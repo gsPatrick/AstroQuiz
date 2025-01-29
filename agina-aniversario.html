@@ -188,30 +188,40 @@
       }
 
 
-      .continue-button {
-        margin-top: 50px;
-        background-color: #17cfbc;
-        color: rgba(255, 255, 255, 0.8);
-        border: none;
-        border-radius: 25px;
-        padding-block: 8px;
-        font-size: 18px;
-        font-family: Arial, sans-serif;
-        cursor: pointer;
+      .button-area{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 100%;
-        max-width: 400px;
-        text-align: center;
-        transition: all 0.3s ease;
-      }
-      
-      .continue-button:hover {
-        background-color: #00847C;
-        color: rgba(255, 255, 255, 1);
-      }
-      
-      .continue-button:active {
-        transform: scale(0.98);
-      }
+    }
+
+    .continue-button {
+    background-color: #17cfbc;
+    color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 25px;
+    padding-block: 20px;
+    padding-inline: 50px;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    width: 50%;
+    max-width: 400px;
+    text-align: center;
+    transition: all 0.3s ease;
+    text-decoration: none; /* Remove a decoração de sublinhado do link */
+    display: inline-block; /* Para o padding e o max-width funcionarem */
+}
+
+.continue-button:hover {
+    background-color: #00847C;
+    color: rgba(255, 255, 255, 1);
+}
+
+.continue-button:active {
+    transform: scale(0.98);
+}
+
 
 </style>
 <body>
@@ -291,7 +301,10 @@
                     </div>
 
 
-                    <a href="pagina-horas.html" class="continue-button">Continuar</a>
+                    <div class="button-area">
+                      <a href="pagina-regiao.html" class="continue-button">Continuar</a>
+                  </div>
+      
                   </div>
 
     </nav>
