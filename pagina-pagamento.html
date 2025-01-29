@@ -66,6 +66,9 @@
           }
       
           .left-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             flex-grow: 1;
           }
       
@@ -95,8 +98,8 @@
           }
       
           .after-text {
-            color: #6B7280;
-            font-size: 12px;
+            color: white;
+            font-size: 22px;
           }
       
           .right-content {
@@ -281,52 +284,17 @@
             <div class="container">
                 <div class="pricing-card selected" onclick="selectCard(this)">
                   <div class="left-content">
-                    <div class="title">Teste de 1 Semana</div>
+                    <div class="title"></div>
                     <div class="price">
-                      <span class="current-price">$1</span>
-                      <span class="original-price">$4.99</span>
                     </div>
-                    <div class="after-text">depois Plano de 2 Semanas $19.99</div>
+                    <div class="after-text">DESBLOQUEIE AGORA</div>
                   </div>
                   <div class="right-content">
-                    <div class="big-price">$1</div>
-                    <div class="period">teste de 1<br>SEMANA</div>
+                    <div class="big-price">Valor :  $47</div>
                   </div>
                 </div>
-            
-                <div class="pricing-card" onclick="selectCard(this)">
-                  <div class="popular-tag">Mais popular</div>
-                  <div class="left-content">
-                    <div class="title">Teste de 2 Semanas</div>
-                    <div class="price">
-                      <span class="current-price">$5.49</span>
-                      <span class="original-price">$9.99</span>
-                    </div>
-                    <div class="after-text">depois Plano de 2 Semanas $19.99</div>
-                  </div>
-                  <div class="right-content gray">
-                    <div class="big-price">$5.49</div>
-                    <div class="period">teste de 2<br>SEMANAS</div>
-                  </div>
-                </div>
-            
-                <div class="pricing-card" onclick="selectCard(this)">
-                  <div class="left-content">
-                    <div class="title">Teste de 4 Semanas</div>
-                    <div class="price">
-                      <span class="current-price">$9.99</span>
-                      <span class="original-price">$19.99</span>
-                    </div>
-                    <div class="after-text">depois Plano de 1 Mês $29.99</div>
-                  </div>
-                  <div class="right-content gray">
-                    <div class="big-price">$9.99</div>
-                    <div class="period">teste de 4<br>SEMANAS</div>
-                  </div>
-                </div>
-              </div>
-              
-            </div>
+            </div>            
+      </div>
             
             <div class="pagamento">
                 <button class="continue-button">Iniciar teste e continuar</button>
