@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=], initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: #142b35;
+        }
+
+        .nav-pagamento{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .texto-titulo-pagamento{
+            text-align: center;
+            font-size: 25px;
+            color: #f2e6c4;
+
+            margin-top: 25px;
+        }
+
+        .planos{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .container {
+            width: 500px;
+            padding: 20px;
+          }
+      
+          .pricing-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            margin-bottom: 15px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+          }
+      
+          .pricing-card:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+          }
+      
+          .pricing-card.selected {
+            border: 2px solid #3BCBB2;
+            background-color: rgba(255, 255, 255, 0.15);
+          }
+      
+          .left-content {
+            flex-grow: 1;
+          }
+      
+          .title {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+          }
+      
+          .price {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 5px;
+          }
+      
+          .current-price {
+            color: #3BCBB2;
+            font-size: 16px;
+          }
+      
+          .original-price {
+            color: #6B7280;
+            text-decoration: line-through;
+            font-size: 14px;
+          }
+      
+          .after-text {
+            color: #6B7280;
+            font-size: 12px;
+          }
+      
+          .right-content {
+            background-color: #3BCBB2;
+            padding: 15px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-width: 100px;
+          }
+      
+          .right-content.gray {
+            background-color: rgba(255, 255, 255, 0.1);
+          }
+      
+          .big-price {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 2px;
+          }
+      
+          .period {
+            color: white;
+            font-size: 12px;
+            text-align: center;
+            text-transform: uppercase;
+          }
+      
+          .popular-tag {
+            background-color: #F87171;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+          }
+
+          .pagamento{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+
+          .continue-button {
+            background-color: #17cfbc;
+            color: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 25px;
+            padding-block: 8px;
+            font-size: 18px;
+            font-family: Arial, sans-serif;
+            cursor: pointer;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            transition: all 0.3s ease;
+          }
+          
+          .continue-button:hover {
+            background-color: #00847C;
+            color: rgba(255, 255, 255, 1);
+          }
+          
+          .continue-button:active {
+            transform: scale(0.98);
+          }
+
+          .textos{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
+
+          .termos{
+            text-align: center;
+            color:#fff;
+            font-size: .875rem;
+            line-height: 1.5;
+
+            margin-top: 10px;
+          }
+          
+          .aviso{
+            margin-top: 25px;
+            color: #818181;
+             font-size: .75rem;
+             letter-spacing: 0;
+
+             text-align: center;
+          }
+
+          .blocoUm{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          .barras {
+            margin-left: 30px;
+            width: 300px;
+          }
+      
+          .progress-item {
+            margin-bottom: 15px;
+          }
+      
+          .label-container {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              margin-bottom: 5px;
+          }
+          
+          .label {
+            color: #CCD6DB;
+            font-size: 16px;
+          }
+      
+          .progress-container {
+            background-color: rgba(255, 255, 255, 0.1);
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+          }
+      
+          .progress-bar {
+            height: 100%;
+            border-radius: 4px;
+          }
+      
+          .percentage {
+            color: #CCD6DB;
+            font-size: 16px;
+          }
+      
+          /* Specific colors for each bar */
+          .amor-bar {
+            background-color: #FF6B6B;
+            width: 89%;
+          }
+      
+          .saude-bar {
+            background-color: #4ECCA3;
+            width: 71%;
+          }
+      
+          .sabedoria-bar {
+            background-color: #FFD93D;
+            width: 90%;
+          }
+      
+          .carreira-bar {
+            background-color: #B19CD9;
+            width: 90%;
+          }
+      
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="nav-pagamento">
+        <img src="https://i.imgur.com/RTHYWSc.png" alt="">
+    </div>
+
+        <div class="titulo-pagamento">
+            <h2 class="texto-titulo-pagamento">Desbloqueie a previsão
+            </h2>
+        </div>
+
+
+        <div class="planos">
+
+            <div class="container">
+                <div class="pricing-card selected" onclick="selectCard(this)">
+                  <div class="left-content">
+                    <div class="title">Teste de 1 Semana</div>
+                    <div class="price">
+                      <span class="current-price">$1</span>
+                      <span class="original-price">$4.99</span>
+                    </div>
+                    <div class="after-text">depois Plano de 2 Semanas $19.99</div>
+                  </div>
+                  <div class="right-content">
+                    <div class="big-price">$1</div>
+                    <div class="period">teste de 1<br>SEMANA</div>
+                  </div>
+                </div>
+            
+                <div class="pricing-card" onclick="selectCard(this)">
+                  <div class="popular-tag">Mais popular</div>
+                  <div class="left-content">
+                    <div class="title">Teste de 2 Semanas</div>
+                    <div class="price">
+                      <span class="current-price">$5.49</span>
+                      <span class="original-price">$9.99</span>
+                    </div>
+                    <div class="after-text">depois Plano de 2 Semanas $19.99</div>
+                  </div>
+                  <div class="right-content gray">
+                    <div class="big-price">$5.49</div>
+                    <div class="period">teste de 2<br>SEMANAS</div>
+                  </div>
+                </div>
+            
+                <div class="pricing-card" onclick="selectCard(this)">
+                  <div class="left-content">
+                    <div class="title">Teste de 4 Semanas</div>
+                    <div class="price">
+                      <span class="current-price">$9.99</span>
+                      <span class="original-price">$19.99</span>
+                    </div>
+                    <div class="after-text">depois Plano de 1 Mês $29.99</div>
+                  </div>
+                  <div class="right-content gray">
+                    <div class="big-price">$9.99</div>
+                    <div class="period">teste de 4<br>SEMANAS</div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            
+            <div class="pagamento">
+                <button class="continue-button">Iniciar teste e continuar</button>
+            </div>
+
+
+            <div class="textos">
+
+                <h3 class="termos">Ao continuar, eu aceito a política de privacidade, <br> os termos de uso os termos de cobrança e <br> e a política de devolução de dinheiro. </h3>
+                <p class="aviso">Seu teste de 7 dias por $1 expirará em 25 de janeiro de 2025. Após o <br> término do período de teste, haverá uma cobrança de $19.99 a cada 2 <br> semanas até o cancelamento da assinatura no aplicativo ou ao contatar <br> o suporte ao cliente 24 horas antes da próxima data de cobrança. Você <br> pode cancelar a assinatura a qualquer momento no aplicativo ou ao <br> contatar o suporte ao cliente. Antes de solicitar reembolso, saiba mais <br> sobre nossa política de devolução de dinheiro.Procurando ajuda? Entre <br> em contato para obter suporte astroline.app@support-team.app. <br> Termos de Assinatura </p>
+                
+                <img  src="https://i.imgur.com/CvUfShN.png" alt="">
+           
+            </div>
+
+
+            <!-- <div class="geral">
+
+                <div class="blocoUm">
+
+                    <h1 class="titulo-geral">VISÃO GERAL</h1>
+
+                   <div class="blocoUmRow"
+                                        <div class="bloco-imagem" id="imageDisplay"></div>
+                       
+                                           <div class="barras">
+                                               <div class="progress-item">
+                                                   <div class="label-container">
+                                                       <div class="label">Amor</div>
+                                                       <div class="percentage">89%</div>
+                                                   </div>
+                                                   <div class="progress-container">
+                                                       <div class="progress-bar amor-bar"></div>
+                                                   </div>
+                                               </div>
+                                           
+                                               <div class="progress-item">
+                                                   <div class="label-container">
+                                                       <div class="label">Saúde</div>
+                                                       <div class="percentage">71%</div>
+                                                   </div>
+                                                   <div class="progress-container">
+                                                       <div class="progress-bar saude-bar"></div>
+                                                   </div>
+                                               </div>
+                                           
+                                               <div class="progress-item">
+                                                   <div class="label-container">
+                                                       <div class="label">Sabedoria</div>
+                                                       <div class="percentage">90%</div>
+                                                   </div>
+                                                   <div class="progress-container">
+                                                       <div class="progress-bar sabedoria-bar"></div>
+                                                   </div>
+                                               </div>
+                                           
+                                               <div class="progress-item">
+                                                   <div class="label-container">
+                                                       <div class="label">Carreira</div>
+                                                       <div class="percentage">90%</div>
+                                                   </div>
+                                                   <div class="progress-container">
+                                                       <div class="progress-bar carreira-bar"></div>
+                                                   </div>
+                                               </div>
+                   </div> -->
+
+                </div>
+
+            </div>
+
+
+         
+          <script>
+            function selectCard(card) {
+              // Remove selected class from all cards
+              document.querySelectorAll('.pricing-card').forEach(el => {
+                el.classList.remove('selected');
+              });
+              // Add selected class to clicked card
+              card.classList.add('selected');
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+    const imageDisplay = document.getElementById('imageDisplay');
+    const storedImage = localStorage.getItem('selectedImage');
+
+    if (storedImage) {
+        const imgElement = document.createElement('img');
+        imgElement.src = storedImage;
+        imgElement.style.width = '150px'
+        imgElement.style.height = '150px'
+        imageDisplay.appendChild(imgElement);
+
+    }
+});
+          </script>
+</body>
+</html>

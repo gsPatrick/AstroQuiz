@@ -1,0 +1,53 @@
+{
+    "rewrites": [
+      {
+        "source": "/agina-aniversario",
+        "destination": "/agina-aniversario.html"
+      },
+      {
+        "source": "/pagina-colocar-mao",
+        "destination": "/pagina-colocar-mao.html"
+      },
+      {
+        "source": "/pagina-cores",
+        "destination": "/pagina-cores.html"
+      },
+      {
+        "source": "/pagina-elementos",
+        "destination": "/pagina-elementos.html"
+      },
+      {
+        "source": "/pagina-horas",
+        "destination": "/pagina-horas.html"
+      },
+      {
+        "source": "/pagina-lua",
+        "destination": "/pagina-lua.html"
+      },
+      {
+        "source": "/pagina-mao",
+        "destination": "/pagina-mao.html"
+      },
+      {
+        "source": "/pagina-metas",
+        "destination": "/pagina-metas.html"
+      },
+      {
+        "source": "/pagina-pagamento",
+        "destination": "/pagina-pagamento.html"
+      },
+      {
+        "source": "/pagina-regiao",
+        "destination": "/pagina-regiao.html"
+      },
+      {
+        "source": "/pagina-relacionamento",
+        "destination": "/pagina-relacionamento%20copy%202.html"
+      },
+      {
+        "source": "/teste",
+        "destination": "/teste.html"
+      }
+    ]
+  }
+  

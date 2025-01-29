@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+    body {
+        margin: 0; /* Reset default margin */
+        background-color: #1e3b48; /* Same as your previous background color */
+        display: flex;
+        flex-direction: column; /* Align items vertically */
+        align-items: center; /* Center items horizontally */
+        min-height: 100vh; /* Ensure body takes full viewport height */
+    }
+
+    .nav-second {
+        display: flex;
+        justify-content: space-between; /* Space elements evenly */
+        align-items: center;
+        width: 500px; /* Full width */
+        padding: 0 20px; /* Padding on the sides */
+        box-sizing: border-box; /* Include padding in width calculation */
+        margin-top: 20px;
+    }
+
+    .back-button {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    .arrow {
+        width: 30px; /* Ajuste o tamanho conforme necessário */
+        color: #f2e6c4
+      }
+      
+      /* Para mudar a cor quando passar o mouse */
+      .arrow:hover {
+        color: #94855b
+      }
+
+    .back-button img {
+        width: 24px; /* Adjust size as needed */
+        height: auto;
+    }
+
+    .logo-text {
+        font-family: 'Arial', sans-serif; /* Choose appropriate font */
+        font-size: 28px; /* Adjust size as needed */
+        font-weight: bold;
+        color: #e9d4a3; /* Same as your h1 color */
+        text-decoration: none;
+    }
+
+    .page-counter {
+        font-family: 'Arial', sans-serif;
+        font-size: 15px;
+        color: #ced1c9;
+    }
+
+    .principal {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 500px;
+    }
+
+    .nav-second{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 500px;
+        flex-direction: column;
+    }
+     .progress-bar {
+        margin-top: 20px;
+        width: 100%;
+        height: 7px;
+        background-color: #1e293b; /* cor de fundo escura */
+        border-radius: 9999px;
+        overflow: hidden;
+      }
+
+      .progress-bar-fill {
+        width: 25%; /* Altere este valor para mudar a porcentagem (0-100) */
+        height: 100%;
+        background-color: #10b981; /* cor verde */
+        border-radius: 9999px;
+        transition: width 0.3s ease-in-out;
+      }
+
+      .conteudo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .titulo-anivesario{
+        margin-top: 50px;
+        color: #e9d4a3;
+        text-align: center;
+      }
+
+      .texto-aniversario {
+        color: #ced1c9;
+        text-align: center;
+
+        font-size: 14px;
+      }
+
+      .datas{
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+        margin-top: 100px;
+      }
+
+
+      .date-container {
+        padding: 20px;
+        color: #536b7a;
+        width: 300px;
+        font-family: Arial, sans-serif;
+      }
+      
+      .column-headers {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        text-align: center;
+        padding-bottom: 10px;
+        border-top: 1px solid #2d3f48;
+        border-bottom: 1px solid #2d3f48;
+        margin-bottom: 10px;
+      }
+      
+      .column-headers .active {
+        color: white;
+      }
+      
+      .date-columns {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+      
+      .date-column {
+        position: relative;
+      }
+      
+      .scroll-window {
+        height: 120px;
+        overflow: hidden;
+        position: relative;
+      }
+      
+      .scroll-content {
+        transition: transform 0.3s ease;
+        position: absolute;
+        width: 100%;
+      }
+      
+      .date-option {
+        text-align: center;
+        height: 40px;
+        line-height: 40px;
+        cursor: pointer;
+        transition: color 0.2s ease;
+      }
+      
+      .date-option:hover {
+        color: #ffffff;
+      }
+      
+      .date-option.selected {
+        color: white;
+      }
+      
+      .date-option.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+
+      .continue-button {
+        margin-top: 50px;
+        background-color: #17cfbc;
+        color: rgba(255, 255, 255, 0.8);
+        border: none;
+        border-radius: 25px;
+        padding-block: 8px;
+        font-size: 18px;
+        font-family: Arial, sans-serif;
+        cursor: pointer;
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+      
+      .continue-button:hover {
+        background-color: #00847C;
+        color: rgba(255, 255, 255, 1);
+      }
+      
+      .continue-button:active {
+        transform: scale(0.98);
+      }
+
+</style>
+<body>
+
+    <nav class="nav-second">
+        
+        <div class="principal">
+            <button class="back-button">
+            <div class="arrow">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                  </svg>
+              </div>
+        </button>
+        <a href="#" class="logo-text">Astroline</a>
+        <span class="page-counter">2/11</span>
+
+        </div>
+
+      
+            <div class="progress-bar">
+                <div class="progress-bar-fill"></div>
+              </div>
+
+              <div class="conteudo">
+                <h2 class="titulo-anivesario">Quando é o seu aniversário?
+                </h2>
+                <h3 class="texto-aniversario">É importante saber sua data de nascimento <br> antes de fazer predições completas e precisas
+                </h3>
+              </div>
+
+              <div class="datas">
+
+
+                <div class="date-container">
+                    <div class="column-headers">
+                      <span>Mês</span>
+                      <span>Dia</span>
+                      <span class="active">Ano</span>
+                    </div>
+                    
+                    <div class="date-columns">
+                      <div class="date-column">
+                        <div class="scroll-window">
+                          <div class="scroll-content month">
+                            <div class="date-option">janeiro</div>
+                            <div class="date-option">fevereiro</div>
+                            <div class="date-option">março</div>
+                            <div class="date-option">abril</div>
+                            <div class="date-option">maio</div>
+                            <div class="date-option">junho</div>
+                            <div class="date-option">julho</div>
+                            <div class="date-option">agosto</div>
+                            <div class="date-option">setembro</div>
+                            <div class="date-option">outubro</div>
+                            <div class="date-option">novembro</div>
+                            <div class="date-option">dezembro</div>
+                          </div>
+                        </div>
+                      </div>
+                  
+                      <div class="date-column">
+                        <div class="scroll-window">
+                          <div class="scroll-content day">
+                            <!-- Dias serão adicionados via JavaScript -->
+                          </div>
+                        </div>
+                      </div>
+                  
+                      <div class="date-column">
+                        <div class="scroll-window">
+                          <div class="scroll-content year">
+                            <!-- Anos serão adicionados via JavaScript -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <a href="pagina-horas.html" class="continue-button">Continuar</a>
+                  </div>
+
+    </nav>
+
+    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Preencher dias (31 até 1)
+            const dayContent = document.querySelector('.scroll-content.day');
+            for (let i = 1; i <= 31; i++) {
+              const div = document.createElement('div');
+              div.className = 'date-option';
+              div.textContent = i.toString().padStart(2, '0');
+              dayContent.appendChild(div);
+            }
+            
+          
+            // Preencher anos (2025 até 1900)
+            const yearContent = document.querySelector('.scroll-content.year');
+            for (let i = 2025; i >= 1900; i--) {
+              const div = document.createElement('div');
+              div.className = 'date-option';
+              div.textContent = i;
+              yearContent.appendChild(div);
+            }
+          
+            // Configurar rolagem para cada coluna
+            document.querySelectorAll('.scroll-content').forEach(content => {
+              let currentIndex = 0;
+              const options = content.querySelectorAll('.date-option');
+              const maxIndex = options.length - 3;
+          
+              // Função para atualizar a posição
+              function updatePosition() {
+                content.style.transform = `translateY(-${currentIndex * 40}px)`;
+              }
+          
+              // Função para verificar limites
+              function isValidMove(index) {
+                const isDay = content.classList.contains('day');
+                const isYear = content.classList.contains('year');
+                
+                if (isDay) {
+                  return index >= 0 && index <= maxIndex;
+                }
+                if (isYear) {
+                  return index >= 0 && index <= maxIndex;
+                }
+                return index >= 0 && index <= maxIndex;
+              }
+          
+              // Adicionar clique em cada opção
+              options.forEach((option, index) => {
+                option.addEventListener('click', () => {
+                  const relativeIndex = index - currentIndex;
+                  
+                  // Clique no primeiro item visível (rolar para cima)
+                  if (relativeIndex === 0 && isValidMove(currentIndex - 1)) {
+                    currentIndex--;
+                    updatePosition();
+                  }
+                  
+                  // Clique no terceiro item visível (rolar para baixo)
+                  else if (relativeIndex === 2 && isValidMove(currentIndex + 1)) {
+                    currentIndex++;
+                    updatePosition();
+                  }
+                });
+              });
+            });
+          });
+    </script>
+</body>
+</html>

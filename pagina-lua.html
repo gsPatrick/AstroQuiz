@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+    body {
+        margin: 0; /* Reset default margin */
+        background-color: #1e3b48; /* Same as your previous background color */
+        display: flex;
+        flex-direction: column; /* Align items vertically */
+        align-items: center; /* Center items horizontally */
+        min-height: 100vh; /* Ensure body takes full viewport height */
+    }
+
+    .nav-second {
+        display: flex;
+        justify-content: space-between; /* Space elements evenly */
+        align-items: center;
+        width: 500px; /* Full width */
+        padding: 0 20px; /* Padding on the sides */
+        box-sizing: border-box; /* Include padding in width calculation */
+        margin-top: 20px;
+    }
+
+    .back-button {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    .arrow {
+        width: 30px; /* Ajuste o tamanho conforme necessário */
+        color: #f2e6c4
+      }
+      
+      /* Para mudar a cor quando passar o mouse */
+      .arrow:hover {
+        color: #94855b
+      }
+
+    .back-button img {
+        width: 24px; /* Adjust size as needed */
+        height: auto;
+    }
+
+    .logo-text {
+        font-family: 'Arial', sans-serif; /* Choose appropriate font */
+        font-size: 28px; /* Adjust size as needed */
+        font-weight: bold;
+        color: #e9d4a3; /* Same as your h1 color */
+        text-decoration: none;
+    }
+
+    .page-counter {
+        font-family: 'Arial', sans-serif;
+        font-size: 15px;
+        color: #ced1c9;
+    }
+
+    .principal {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 500px;
+    }
+
+    .nav-second{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 500px;
+        flex-direction: column;
+    }
+     .progress-bar {
+        margin-top: 20px;
+        width: 100%;
+        height: 7px;
+        background-color: #1e293b; /* cor de fundo escura */
+        border-radius: 9999px;
+        overflow: hidden;
+      }
+
+      .progress-bar-fill {
+        width: 25%; /* Altere este valor para mudar a porcentagem (0-100) */
+        height: 100%;
+        background-color: #10b981; /* cor verde */
+        border-radius: 9999px;
+        transition: width 0.3s ease-in-out;
+      }
+
+      .conteudo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .titulo-anivesario{
+        margin-top: 50px;
+        color: #e9d4a3;
+        text-align: center;
+      }
+
+      .texto-aniversario {
+        color: #ced1c9;
+        text-align: center;
+
+        font-size: 14px;
+      }
+
+      .imagensLua{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .texto-lua{
+        color:#faf6e8;
+      }
+
+      .distancia {
+        margin-left: 50px;
+      }
+
+      .stats-container {
+        padding: 20px;
+        color: #CBD5E1;
+        font-family: Arial, sans-serif;
+        max-width: 500px;
+    }
+    
+    .stat-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 24px;
+    }
+    
+    .percentage {
+        font-size: 48px;
+        font-weight: bold;
+        color: #E2E8F0;
+        white-space: nowrap;
+    }
+    
+    .description {
+        font-size: 16px;
+        line-height: 1.5;
+        margin: 0;
+        color: #94A3B8;
+        padding-top: 12px; /* Align text with the middle of the percentage */
+    }
+    
+    .highlight {
+        color: #E2E8F0;
+    }
+
+
+      .continue-button {
+        margin-top: 50px;
+        background-color: #17cfbc;
+        color: rgba(255, 255, 255, 0.8);
+        border: none;
+        border-radius: 25px;
+        padding-block: 8px;
+        font-size: 18px;
+        font-family: Arial, sans-serif;
+        cursor: pointer;
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+      
+      .continue-button:hover {
+        background-color: #00847C;
+        color: rgba(255, 255, 255, 1);
+      }
+      
+      .continue-button:active {
+        transform: scale(0.98);
+      }
+
+
+</style>
+<body>
+
+    <nav class="nav-second">
+        
+        <div class="principal">
+            <button class="back-button">
+            <div class="arrow">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                  </svg>
+              </div>
+        </button>
+        <a href="#" class="logo-text">Astroline</a>
+        <span class="page-counter">3/11</span>
+
+        </div>
+
+      
+            <div class="progress-bar">
+                <div class="progress-bar-fill"></div>
+              </div>
+
+              <div class="conteudo">
+                <h2 class="titulo-anivesario">Você sabe como a lua afeta sua <br> energia?
+                </h2>
+              </div>
+
+              <div class="conteudo-lua">
+
+                <div class="imagensLua">
+
+                    <div class="imgLua">
+
+                        <img src="https://sub.astroline.today/static/media/waning_default.9f6614f0d888567ef720.webp" alt="">
+                        
+                            
+                        <h3 class="texto-lua">Lua minguante</h3>
+                    </div>
+
+                    <div class="imglLua distancia">
+                        <img src="https://sub.astroline.today/static/media/waxing_default.9837592b80d92fcbd077.webp" alt="">
+                        <h3 class="texto-lua">Lua crescente</h3>
+                    </div>
+
+                </div>
+
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <span class="percentage">75%</span>
+                        <p class="description">
+                            das pessoas tendem a sentir uma
+                            <span class="highlight">diminuição da energia e do desempenho</span>
+                            na fase da lua minguante
+                        </p>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <span class="percentage">56%</span>
+                        <p class="description">
+                            das pessoas, diferentemente,
+                            <span class="highlight">experimentam alegria e inspiração</span> na
+                            fase de Lua Crescente
+                        </p>
+                    </div>
+                </div
+
+
+              </div>
+
+
+              <a href="pagina-relacionamento copy 2.html" class="continue-button">Continuar</a>
+            </div>
+
+    </nav>
+
+    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Preencher horas (0 até 23)
+            const hourContent = document.querySelector('.scroll-content.day');
+            for (let i = 0; i <= 23; i++) {
+                const div = document.createElement('div');
+                div.className = 'date-option';
+                div.textContent = i.toString().padStart(2, '0');
+                hourContent.appendChild(div);
+            }
+        
+            // Preencher minutos (0 até 59)
+            const yearContent = document.querySelector('.scroll-content.year');
+            for (let i = 0; i <= 59; i++) {
+                const div = document.createElement('div');
+                div.className = 'date-option';
+                div.textContent = i.toString().padStart(2, '0');
+                yearContent.appendChild(div);
+            }
+        
+            // Configurar rolagem para cada coluna
+            document.querySelectorAll('.scroll-content').forEach(content => {
+                let currentIndex = 0;
+                const options = content.querySelectorAll('.date-option');
+                const maxIndex = options.length - 3;
+        
+                function updateSelection() {
+                    // Remover a classe selected de todas as opções
+                    options.forEach(opt => opt.style.color = '');
+                    
+                    // Adicionar a classe selected para a opção do meio
+                    if (options[currentIndex + 1]) {
+                        options[currentIndex + 1].style.color = 'white';
+                    }
+                }
+        
+                function updatePosition() {
+                    content.style.transform = `translateY(-${currentIndex * 40}px)`;
+                    updateSelection();
+                }
+        
+                function isValidMove(index) {
+                    const isDay = content.classList.contains('day');
+                    const isYear = content.classList.contains('year');
+                    return index >= 0 && index <= maxIndex;
+                }
+        
+                // Adicionar clique em cada opção
+                options.forEach((option, index) => {
+                    option.addEventListener('click', () => {
+                        const relativeIndex = index - currentIndex;
+        
+                        if (relativeIndex === 0 && isValidMove(currentIndex - 1)) {
+                            currentIndex--;
+                            updatePosition();
+                        } else if (relativeIndex === 2 && isValidMove(currentIndex + 1)) {
+                            currentIndex++;
+                            updatePosition();
+                        }
+                    });
+                });
+        
+                // Inicializar a seleção
+                updateSelection();
+            });
+        });
+    </script>
+</body>
+</html>

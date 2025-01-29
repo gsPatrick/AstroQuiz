@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+    body {
+        margin: 0; /* Reset default margin */
+        background-color: #1e3b48; /* Same as your previous background color */
+        display: flex;
+        flex-direction: column; /* Align items vertically */
+        align-items: center; /* Center items horizontally */
+        min-height: 100vh; /* Ensure body takes full viewport height */
+    }
+
+    .nav-second {
+        display: flex;
+        justify-content: space-between; /* Space elements evenly */
+        align-items: center;
+        width: 500px; /* Full width */
+        padding: 0 20px; /* Padding on the sides */
+        box-sizing: border-box; /* Include padding in width calculation */
+        margin-top: 20px;
+    }
+
+    .back-button {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    .arrow {
+        width: 30px; /* Ajuste o tamanho conforme necessário */
+        color: #f2e6c4
+      }
+      
+      /* Para mudar a cor quando passar o mouse */
+      .arrow:hover {
+        color: #94855b
+      }
+
+    .back-button img {
+        width: 24px; /* Adjust size as needed */
+        height: auto;
+    }
+
+    .logo-text {
+        font-family: 'Arial', sans-serif; /* Choose appropriate font */
+        font-size: 28px; /* Adjust size as needed */
+        font-weight: bold;
+        color: #e9d4a3; /* Same as your h1 color */
+        text-decoration: none;
+    }
+
+    .page-counter {
+        font-family: 'Arial', sans-serif;
+        font-size: 15px;
+        color: #ced1c9;
+    }
+
+    .principal {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 500px;
+    }
+
+    .nav-second{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 500px;
+        flex-direction: column;
+    }
+     .progress-bar {
+        margin-top: 20px;
+        width: 100%;
+        height: 7px;
+        background-color: #1e293b; /* cor de fundo escura */
+        border-radius: 9999px;
+        overflow: hidden;
+      }
+
+      .progress-bar-fill {
+        width: 25%; /* Altere este valor para mudar a porcentagem (0-100) */
+        height: 100%;
+        background-color: #10b981; /* cor verde */
+        border-radius: 9999px;
+        transition: width 0.3s ease-in-out;
+      }
+
+      .conteudo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .titulo-anivesario{
+        margin-top: 50px;
+        color: #e9d4a3;
+        text-align: center;
+        font-size: 30px;
+      }
+
+      .texto-aniversario {
+        color: #ced1c9;
+        text-align: center;
+
+        font-size: 20px;
+      }
+
+
+      .container {
+        width: 400px;
+      }
+  
+      .color-button {
+        background-color:#2d5668;
+        border-radius: 12px;
+        padding: 15px;
+        margin-bottom: 15px;
+        color: white;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+  
+      .color-button:hover {
+        background-color:#294e5e;
+      }
+  
+      .color-circle {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+  
+      .color-text {
+        font-size: 18px;
+        font-weight: 500;
+      }
+  
+      .circle-vermelho { background-color: #FF6B6B; }
+      .circle-amarelo { background-color: #FFD93D; }
+      .circle-azul { background-color: #4D96FF; }
+      .circle-laranja { background-color: #FFA07A; }
+      .circle-verde { background-color: #4ECCA3; }
+      .circle-violeta { background-color: #B19CD9; }
+ 
+
+
+      .continue-button {
+        margin-top: 500px;
+        background-color: #17cfbc;
+        color: rgba(255, 255, 255, 0.8);
+        border: none;
+        border-radius: 25px;
+        padding-block: 8px;
+        font-size: 18px;
+        font-family: Arial, sans-serif;
+        cursor: pointer;
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+      
+      .continue-button:hover {
+        background-color: #00847C;
+        color: rgba(255, 255, 255, 1);
+      }
+      
+      .continue-button:active {
+        transform: scale(0.98);
+      }
+
+
+</style>
+<body>
+
+    <nav class="nav-second">
+        
+        <div class="principal">
+            <button class="back-button">
+            <div class="arrow">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                  </svg>
+              </div>
+        </button>
+        <a href="#" class="logo-text">Astroline</a>
+        <span class="page-counter">4/11</span>
+
+        </div>
+
+      
+            <div class="progress-bar">
+                <div class="progress-bar-fill"></div>
+              </div>
+
+              <div class="conteudo">
+                <h2 class="titulo-anivesario">De qual elemento da natureza você <br>
+                  mais gosta?
+
+                </h2>
+                <h3 class="texto-aniversario">O elemento da natureza é importante para uma <br> melhor personalização
+                </h3>
+              </div>
+              <div class="container">
+                <div class="color-button">
+                  <div class="color-circle circle-vermelho"></div>
+                  <span class="color-text">Vermelho</span>
+                </div>
+                <div class="color-button">
+                  <div class="color-circle circle-amarelo"></div>
+                  <span class="color-text">Amarelo</span>
+                </div>
+                <div class="color-button">
+                  <div class="color-circle circle-azul"></div>
+                  <span class="color-text">Azul</span>
+                </div>
+                <div class="color-button">
+                  <div class="color-circle circle-laranja"></div>
+                  <span class="color-text">Laranja</span>
+                </div>
+                <div class="color-button">
+                  <div class="color-circle circle-verde"></div>
+                  <span class="color-text">Verde</span>
+                </div>
+                <div class="color-button">
+                  <div class="color-circle circle-violeta"></div>
+                  <span class="color-text">Violeta</span>
+                </div>
+              </div>
+
+              <a href="pagina-colocar-mao.html" class="continue-button">Continuar</a>
+            </div>
+
+    </nav>
+
+    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Preencher horas (0 até 23)
+            const hourContent = document.querySelector('.scroll-content.day');
+            for (let i = 0; i <= 23; i++) {
+                const div = document.createElement('div');
+                div.className = 'date-option';
+                div.textContent = i.toString().padStart(2, '0');
+                hourContent.appendChild(div);
+            }
+        
+            // Preencher minutos (0 até 59)
+            const yearContent = document.querySelector('.scroll-content.year');
+            for (let i = 0; i <= 59; i++) {
+                const div = document.createElement('div');
+                div.className = 'date-option';
+                div.textContent = i.toString().padStart(2, '0');
+                yearContent.appendChild(div);
+            }
+        
+            // Configurar rolagem para cada coluna
+            document.querySelectorAll('.scroll-content').forEach(content => {
+                let currentIndex = 0;
+                const options = content.querySelectorAll('.date-option');
+                const maxIndex = options.length - 3;
+        
+                function updateSelection() {
+                    // Remover a classe selected de todas as opções
+                    options.forEach(opt => opt.style.color = '');
+                    
+                    // Adicionar a classe selected para a opção do meio
+                    if (options[currentIndex + 1]) {
+                        options[currentIndex + 1].style.color = 'white';
+                    }
+                }
+        
+                function updatePosition() {
+                    content.style.transform = `translateY(-${currentIndex * 40}px)`;
+                    updateSelection();
+                }
+        
+                function isValidMove(index) {
+                    const isDay = content.classList.contains('day');
+                    const isYear = content.classList.contains('year');
+                    return index >= 0 && index <= maxIndex;
+                }
+        
+                // Adicionar clique em cada opção
+                options.forEach((option, index) => {
+                    option.addEventListener('click', () => {
+                        const relativeIndex = index - currentIndex;
+        
+                        if (relativeIndex === 0 && isValidMove(currentIndex - 1)) {
+                            currentIndex--;
+                            updatePosition();
+                        } else if (relativeIndex === 2 && isValidMove(currentIndex + 1)) {
+                            currentIndex++;
+                            updatePosition();
+                        }
+                    });
+                });
+        
+                // Inicializar a seleção
+                updateSelection();
+            });
+        });
+    </script>
+</body>
+</html>
