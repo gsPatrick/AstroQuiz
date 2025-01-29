@@ -151,31 +151,47 @@
       .priority-button.selected {
         background-color: #3b82f6;
       }
-
-      .continue-button {
-        margin-top: 500px;
-        background-color: #17cfbc;
-        color: rgba(255, 255, 255, 0.8);
-        border: none;
-        border-radius: 25px;
-        padding-block: 8px;
-        font-size: 18px;
-        font-family: Arial, sans-serif;
-        cursor: pointer;
+      .button-area{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 100%;
-        max-width: 400px;
-        text-align: center;
-        transition: all 0.3s ease;
-      }
-      
-      .continue-button:hover {
-        background-color: #00847C;
-        color: rgba(255, 255, 255, 1);
-      }
-      
-      .continue-button:active {
-        transform: scale(0.98);
-      }
+        margin-top: 50px;
+    }
+
+    .continue-button {
+    background-color: #17cfbc;
+    color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 25px;
+    padding-block: 20px;
+    padding-inline: 50px;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    width: 50%;
+    max-width: 400px;
+    text-align: center;
+    transition: all 0.3s ease;
+    text-decoration: none; /* Remove a decoração de sublinhado do link */
+    display: inline-block; /* Para o padding e o max-width funcionarem */
+    opacity: 0;
+    pointer-events: none;
+}
+
+.continue-button.show {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.continue-button:hover {
+    background-color: #00847C;
+    color: rgba(255, 255, 255, 1);
+}
+
+.continue-button:active {
+    transform: scale(0.98);
+}
 
 
 </style>
@@ -202,10 +218,9 @@
               </div>
 
               <div class="conteudo">
-                <h2 class="titulo-anivesario">Onde você nasceu?
-
+                <h2 class="titulo-anivesario">Quais são as suas prioridades?
                 </h2>
-                <h3 class="texto-aniversario">O local é importante para explorar seus principais  <br> traços de personalidade, necessidades e desejos
+                <h3 class="texto-aniversario">As prioridades são importantes para uma melhor <br> personalização
                 </h3>
               </div>
 
@@ -237,8 +252,9 @@
               </div>
            
 
-
-              <a href="pagina-mao.html" class="continue-button">Continuar</a>
+              <div class="button-area" id="buttonArea">
+                <a href="pagina-mao.html" class="continue-button" id="continueButton">Continuar</a>
+              </div>
             </div>
 
     </nav>
@@ -246,20 +262,30 @@
     
 
     <script>
-      let selectedCount = 0;
-      const maxSelections = 3;
-      const countDisplay = document.getElementById('count');
+    let selectedCount = 0;
+    const maxSelections = 3;
+    const countDisplay = document.getElementById('count');
+    const continueButton = document.getElementById('continueButton');
+    
   
-      function toggleSelection(button) {
-        if (button.classList.contains('selected')) {
-          button.classList.remove('selected');
-          selectedCount--;
-        } else if (selectedCount < maxSelections) {
-          button.classList.add('selected');
-          selectedCount++;
-        }
-        countDisplay.textContent = selectedCount;
+    function toggleSelection(button) {
+      if (button.classList.contains('selected')) {
+        button.classList.remove('selected');
+        selectedCount--;
+      } else if (selectedCount < maxSelections) {
+        button.classList.add('selected');
+        selectedCount++;
       }
+  
+      countDisplay.textContent = selectedCount;
+      
+      // Mostrar ou ocultar o botão com base em selectedCount
+      if (selectedCount > 0) {
+          continueButton.classList.add('show');
+      } else {
+          continueButton.classList.remove('show');
+      }
+    }
     </script>
 </body>
 </html>

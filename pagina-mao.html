@@ -71,8 +71,7 @@
   
     }
 
-    .nav-second{
-      background-color: #152b35;
+    .nav-second{  
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -122,41 +121,51 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 20px;
+
         margin-bottom: 500px;
       }
 
       .mao {
-        margin-top: 200px;
-        width: 500px;
+        width: 350px;
       
       }
 
    
-      .continue-button {
-       margin-top: 200px;
-        background-color: #17cfbc;
-        color: rgba(255, 255, 255, 0.8);
-        border: none;
-        border-radius: 25px;
-        padding-block: 8px;
-        font-size: 18px;
-        font-family: Arial, sans-serif;
-        cursor: pointer;
+      .button-area{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 100%;
-        max-width: 400px;
-        text-align: center;
-        transition: all 0.3s ease;
-        margin-bottom: 50px;
-      }
-      .continue-button:hover {
-        background-color: #00847C;
-        color: rgba(255, 255, 255, 1);
-      }
-      
-      .continue-button:active {
-        transform: scale(0.98);
-      }
+        margin-top: 50px;
+    }
+
+    .continue-button {
+    background-color: #17cfbc;
+    color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 25px;
+    padding-block: 20px;
+    padding-inline: 50px;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    width: 50%;
+    max-width: 400px;
+    text-align: center;
+    transition: all 0.3s ease;
+    text-decoration: none; /* Remove a decoração de sublinhado do link */
+    display: inline-block; /* Para o padding e o max-width funcionarem */
+}
+
+.continue-button:hover {
+    background-color: #00847C;
+    color: rgba(255, 255, 255, 1);
+}
+
+.continue-button:active {
+    transform: scale(0.98);
+}
+
 
 
 </style>
@@ -191,10 +200,13 @@
               </div>
 
                   <imagem-mao>
-                    <img class="mao" src="https://i.imgur.com/h3HgulV.png" alt="">
+                    <img class="mao" src="https://i.imgur.com/8ygeSy5.png" alt="">
                   </imagem-mao>
 
-                  <a href="pagina-elementos.html" class="continue-button">Continuar</a>
+
+                  <div class="button-area">
+                    <a href="pagina-elementos.html" class="continue-button">Continuar</a>
+                  </div>
                 </div>
 
     </nav>
