@@ -1,53 +1,60 @@
 {
     "rewrites": [
       {
-        "source": "/agina-aniversario",
+        "source": "/birthday-page",
         "destination": "/agina-aniversario.html"
       },
       {
-        "source": "/pagina-colocar-mao",
+        "source": "/hand-placement",
         "destination": "/pagina-colocar-mao.html"
       },
       {
-        "source": "/pagina-cores",
+        "source": "/colors-page",
         "destination": "/pagina-cores.html"
       },
       {
-        "source": "/pagina-elementos",
+        "source": "/elements-page",
         "destination": "/pagina-elementos.html"
       },
       {
-        "source": "/pagina-horas",
+        "source": "/hours-page",
+        "destination": "/pagina-horas.html"
+      },
+       {
+        "source": "/time-page",
         "destination": "/pagina-horas.html"
       },
       {
-        "source": "/pagina-lua",
+        "source": "/moon-page",
         "destination": "/pagina-lua.html"
       },
-      {
-        "source": "/pagina-mao",
+       {
+        "source": "/hand-page",
         "destination": "/pagina-mao.html"
       },
-      {
-        "source": "/pagina-metas",
+       {
+        "source": "/goals-page",
+        "destination": "/pagina-metas.html"
+      },
+       {
+        "source": "/priorities-page",
         "destination": "/pagina-metas.html"
       },
       {
-        "source": "/pagina-pagamento",
+        "source": "/payment-page",
         "destination": "/pagina-pagamento.html"
       },
       {
-        "source": "/pagina-regiao",
+        "source": "/region-page",
         "destination": "/pagina-regiao.html"
       },
-      {
-        "source": "/pagina-relacionamento",
+        {
+        "source": "/relationship-page",
         "destination": "/pagina-relacionamento%20copy%202.html"
       },
       {
-        "source": "/teste",
-        "destination": "/teste.html"
-      }
+        "source":"/relationship-status-page",
+         "destination": "/pagina-relacionamento%20copy%202.html"
+       }
     ]
   }
-  
