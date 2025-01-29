@@ -146,7 +146,7 @@
         max-width: 400px;
         text-align: center;
         transition: all 0.3s ease;
-        margin-bottom: 50px;
+        margin-bottom: 10px;
       }
       .continue-button:hover {
         background-color: #00847C;
@@ -158,6 +158,31 @@
       }
 
 
+      .continue-button2 {
+    background-color: #17cfbc;
+    color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 25px;
+    padding-block: 8px;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    transition: all 0.3s ease;
+    text-decoration: none; /* Remove o sublinhado */
+    display: inline-block;  /* Para o padding e o max-width funcionarem */
+}
+
+.continue-button2:hover {
+    background-color: #00847C;
+    color: rgba(255, 255, 255, 1);
+}
+
+.continue-button2:active {
+    transform: scale(0.98);
+}
 </style>
 <body>
 
@@ -200,6 +225,8 @@
                     <input type="file" id="fileInput" accept="image/*" style="display: none;">
                     Enviar foto
                     </button>
+
+                    <a class="continue-button2" href="pagina-mao-tirarFoto.html">Tirar Foto</a>
 
     </nav>
 
