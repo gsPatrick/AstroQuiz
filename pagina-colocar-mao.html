@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale: 1.0">
     <title>Tirar foto da palma da mão</title>
     <style>
     body {
@@ -12,17 +12,17 @@
         flex-direction: column;
         align-items: center;
         min-height: 100vh;
-        font-family: 'Arial', sans-serif; /* Added a default font for better consistency */
-        color: #ced1c9; /* Default text color */
+        font-family: 'Arial', sans-serif;
+        color: #ced1c9;
     }
 
     .nav-second {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 90vw; /* Using viewport width for better responsiveness */
-        max-width: 500px; /* Max width to limit size on larger screens */
-        padding: 10px 20px; /* Adjusted padding */
+        width: 90vw;
+        max-width: 500px;
+        padding: 10px 20px;
         box-sizing: border-box;
         margin-top: 20px;
     }
@@ -49,33 +49,34 @@
     }
 
     .logo-text {
-        font-size: 24px; /* Slightly reduced logo size for better fit */
+        font-size: 24px;
         font-weight: bold;
         color: #e9d4a3;
         text-decoration: none;
     }
 
     .page-counter {
-        font-size: 14px; /* Slightly reduced page counter size */
+        font-size: 14px;
+        color: #ced1c9;
     }
 
     .principal {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 100%; /* Take full width within nav-second */
+        width: 100%;
     }
 
     .nav-second{
-        flex-direction: column; /* Stack items vertically in nav-second */
-        width: 90vw; /* Responsive width */
+        flex-direction: column;
+        width: 90vw;
         max-width: 500px;
     }
 
      .progress-bar {
-        margin-top: 15px; /* Reduced margin */
+        margin-top: 15px;
         width: 100%;
-        height: 5px; /* Reduced height */
+        height: 5px;
         background-color: #1e293b;
         border-radius: 9999px;
         overflow: hidden;
@@ -94,35 +95,35 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-top: 20px; /* Reduced margin */
+        margin-top: 20px;
       }
 
       .titulo-destino{
-        margin-top: 20px; /* Reduced margin */
+        margin-top: 20px;
         color: #e9d4a3;
         text-align: center;
-        font-size: 26px; /* Reduced title size */
-        margin-bottom: 10px; /* Added bottom margin */
+        font-size: 26px;
+        margin-bottom: 10px;
       }
 
       .texto-aniversario {
         text-align: center;
-        font-size: 18px; /* Reduced text size */
+        font-size: 18px;
       }
 
     .camera-container {
          display: flex;
         justify-content: center;
         align-items: center;
-         margin-top: 15px; /* Reduced margin */
+         margin-top: 15px;
         position: relative;
         width: 90vw;
         max-width: 500px;
-        height: 70vw; /* Height relative to width for square-like area */
+        height: 70vw;
           max-height: 500px;
        }
      .camera-container.active{
-         height: auto; /* Adjust height when active if needed */
+         height: auto;
        }
         #cameraPreview {
            position: relative;
@@ -132,7 +133,7 @@
           align-items: center;
           justify-content: center;
            overflow: hidden;
-           border-radius: 10px; /* Optional: Rounded corners for camera preview */
+           border-radius: 10px;
        }
        #handOverlay {
            position: absolute;
@@ -142,17 +143,94 @@
            object-fit:cover;
            pointer-events: none;
         }
+
+    .analysis-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center; /* Centraliza verticalmente os elementos internos */
+    }
+
+    .scanning-line {
+        position: absolute;
+        top: 20px; /* Posição inicial no topo, ajuste conforme necessário */
+        left: 0;
+        width: 100%;
+        height: 4px; /* Espessura da linha */
+        background-color: #34eb71; /* Cor verde */
+        border-radius: 2px;
+        animation: scanAnimation 2s linear infinite alternate; /* Animação */
+    }
+
+    @keyframes scanAnimation {
+        0% {
+            top: 20px; /* Começa no topo */
+        }
+        100% {
+            top: calc(100% - 20px - 4px); /* Vai até perto da base (ajuste 20px e 4px conforme necessário) */
+        }
+    }
+
+    .analysis-progress-container {
+        width: 80%; /* Largura do container da barra de progresso */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centraliza a barra e o texto horizontalmente */
+        margin-top: 20px; /* Espaço abaixo do camera-container */
+        display: none; /* Hidden by default - will be shown with JS */
+    }
+
+
+    .analysis-progress-bar {
+        width: 100%; /* Largura da barra de progresso */
+        height: 12px; /* Altura da barra de progresso */
+        background-color: #374151; /* Cor de fundo da barra */
+        border-radius: 6px; /* Bordas mais arredondadas */
+        overflow: hidden;
+        position: relative; /* Para posicionamento absoluto da porcentagem */
+    }
+
+    .analysis-progress-bar-fill {
+        width: 0%; /* Começa vazio */
+        height: 100%;
+        background-color: #17cfbc; /* Cor de preenchimento inicial */
+        border-radius: 6px;
+        transition: none; /* Remove a transição CSS, vamos animar via JS */
+    }
+
+    .progress-percentage {
+        position: absolute;
+        top: 50%;
+        left: 174px; /* Espaçamento da esquerda */
+        transform: translateY(-50%);
+        color: #f3f4f6; /* Cor do texto da porcentagem */
+        font-size: 14px; /* Tamanho da fonte da porcentagem */
+    }
+
+
+    .analysis-text {
+        margin-top: 10px;
+        font-size: 16px;
+        color: #f3f4f6;
+        text-align: center; /* Centraliza o texto "Analisando..." */
+    }
+
+
       .button-area {
          display: flex;
           justify-content: center;
           align-items: center;
           width: 100%;
-           margin-top: 20px; /* Adjusted margin */
+           margin-top: 20px;
            flex-direction: column;
            }
       .continue-button {
             color: rgba(255, 255, 255, 0.8);
-            font-size: 16px; /* Reduced button text size */
+            font-size: 16px;
             cursor: pointer;
             text-align: center;
             transition: all 0.3s ease;
@@ -161,8 +239,8 @@
             background-color: #17cfbc;
             border: 2px solid white;
             border-radius: 50%;
-            width: 80px; /* Reduced button size */
-            height: 80px; /* Reduced button size */
+            width: 80px;
+            height: 80px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -180,17 +258,17 @@
         color: rgba(255, 255, 255, 0.8);
         border: none;
         border-radius: 25px;
-        padding: 8px 20px; /* Adjusted padding */
-        font-size: 16px; /* Reduced button2 text size */
+        padding: 8px 20px;
+        font-size: 16px;
         cursor: pointer;
-        width: auto; /* Auto width for button2 */
-        min-width: 200px; /* Minimum width for button2 */
+        width: auto;
+        min-width: 200px;
         max-width: 400px;
         text-align: center;
         transition: all 0.3s ease;
         text-decoration: none;
         display: inline-block;
-        box-sizing: border-box; /* Ensure padding is included in width */
+        box-sizing: border-box;
     }
 
     .continue-button2:hover {
@@ -203,19 +281,19 @@
     }
 @media (max-width: 600px) {
 .nav-second, .principal, .camera-container, .conteudo, .button-area {
-width: 95vw; /* Further responsiveness for very small screens */
+width: 95vw;
 }
 .titulo-destino{
-    font-size: 1.5rem; /* Adjust title size for smaller screens */
+    font-size: 1.5rem;
 }
 .texto-aniversario {
-    font-size: 1rem; /* Adjust text size for smaller screens */
+    font-size: 1rem;
 }
 .logo-text {
-    font-size: 1.6rem; /* Adjust logo size for smaller screens */
+    font-size: 1.6rem;
 }
 .page-counter {
-    font-size: 0.9rem; /* Adjust page counter size for smaller screens */
+    font-size: 0.9rem;
 }
 }
     </style>
@@ -256,6 +334,16 @@ width: 95vw; /* Further responsiveness for very small screens */
                  <img id="handOverlay" src="https://sub.astroline.today/static/media/shape.8e5e1cffb28474ee3111.webp" alt="Hand Overlay" >
                  </div>
 
+                 <div id="analysisOverlay" class="analysis-overlay"> <!-- Container para elementos de análise -->
+                    <div id="scanningLine" class="scanning-line"></div> <!-- Linha verde -->
+                </div>
+            </div>
+            <div class="analysis-progress-container" id="analysisProgressContainer">  <!-- Container para barra de progresso e texto -->
+                <div class="analysis-progress-bar"> <!-- Barra de progresso -->
+                    <div class="analysis-progress-bar-fill" id="analysisProgressBarFill"></div>
+                    <span class="progress-percentage" id="progressPercentageText">0%</span> <!-- Texto da porcentagem -->
+                </div>
+                <p class="analysis-text">Analisando a palma da sua mão...</p> <!-- Texto de análise -->
             </div>
 
                 <div class="button-area">
@@ -270,6 +358,8 @@ width: 95vw; /* Further responsiveness for very small screens */
       const takePhotoButton = document.getElementById('takePhotoButton');
       const cameraPreview = document.getElementById('cameraPreview');
       const cameraContainer = document.getElementById('cameraContainer');
+      const analysisOverlay = document.getElementById('analysisOverlay'); // Get analysisOverlay
+      const analysisProgressContainer = document.getElementById('analysisProgressContainer'); // Get progress container
       let videoElement = null;
       let cameraStream = null;
 
@@ -299,6 +389,7 @@ width: 95vw; /* Further responsiveness for very small screens */
 
                               startCameraButton.style.display = 'none';
                               takePhotoButton.style.display = 'inline-block';
+                              takePhotoButton.textContent = '';
 
 
                  })
@@ -328,8 +419,46 @@ width: 95vw; /* Further responsiveness for very small screens */
              cameraPreview.removeChild(videoElement);
              videoElement = null;
              cameraStream = null;
+             cameraPreview.style.display = 'none';
 
-             window.location.href = 'pagina-pagamento.html';
+             const capturedImgElement = document.createElement('img');
+             capturedImgElement.src = imageDataURL;
+             capturedImgElement.style.maxWidth = '100%';
+             capturedImgElement.style.height = 'auto';
+             cameraContainer.appendChild(capturedImgElement);
+
+             takePhotoButton.style.display = 'none';
+             startCameraButton.style.display = 'none';
+             takePhotoButton.textContent = 'Tirar Foto';
+
+             analysisOverlay.style.display = 'flex'; // Show analysis overlay with scanning line
+             analysisProgressContainer.style.display = 'flex'; // Show progress bar container
+
+             const progressBarFill = document.getElementById('analysisProgressBarFill');
+             const progressPercentageText = document.getElementById('progressPercentageText');
+             let progress = 0;
+             const intervalTime = 50; // Intervalo de atualização em milissegundos
+             const totalTime = 10000; // Tempo total da análise em milissegundos
+             const increment = (100 * intervalTime) / totalTime; // Incremento por intervalo
+
+             const progressInterval = setInterval(function() {
+                 progress += increment;
+                 if (progress > 100) progress = 100; // Garante que não passe de 100%
+
+                 progressBarFill.style.width = `${progress}%`; // Atualiza a largura da barra
+                 progressPercentageText.textContent = `${Math.round(progress)}%`; // Atualiza o texto da porcentagem
+
+                 if (progress >= 100) {
+                     clearInterval(progressInterval); // Limpa o intervalo quando chega a 100%
+                     setTimeout(function() {
+                        cameraContainer.removeChild(capturedImgElement);
+                        analysisOverlay.style.display = 'none'; // Hide analysis overlay
+                        analysisProgressContainer.style.display = 'none'; // Hide progress bar container
+                        cameraPreview.style.display = 'flex'; // Opcional: para tirar outra foto
+                        window.location.href = 'pagina-pagamento.html';
+                     }, 0); // Redireciona imediatamente após completar 100% (pode ajustar o timeout se necessário)
+                 }
+             }, intervalTime);
           }
       });
    });
