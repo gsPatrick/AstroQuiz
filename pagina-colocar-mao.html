@@ -3,27 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<style>
-
+    <title>Tirar foto da palma da mão</title>
+    <style>
     body {
-        margin: 0; /* Reset default margin */
-        background-color: #1e3b48; /* Same as your previous background color */
+        margin: 0;
+        background-color: #1e3b48;
         display: flex;
-        flex-direction: column; /* Align items vertically */
-        align-items: center; /* Center items horizontally */
-        min-height: 100vh; /* Ensure body takes full viewport height */
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        font-family: 'Arial', sans-serif; /* Added a default font for better consistency */
+        color: #ced1c9; /* Default text color */
     }
 
     .nav-second {
         display: flex;
-        justify-content: space-between; /* Space elements evenly */
+        justify-content: space-between;
         align-items: center;
-        width: 500px; /* Full width */
-        padding: 0 20px; /* Padding on the sides */
-        box-sizing: border-box; /* Include padding in width calculation */
+        width: 90vw; /* Using viewport width for better responsiveness */
+        max-width: 500px; /* Max width to limit size on larger screens */
+        padding: 10px 20px; /* Adjusted padding */
+        box-sizing: border-box;
         margin-top: 20px;
     }
 
@@ -35,62 +35,56 @@
     }
 
     .arrow {
-        width: 30px; /* Ajuste o tamanho conforme necessário */
-        color: #f2e6c4
-      }
-      
-      /* Para mudar a cor quando passar o mouse */
-      .arrow:hover {
-        color: #94855b
+        width: 30px;
+        color: #f2e6c4;
       }
 
+    .arrow:hover {
+        color: #94855b;
+    }
+
     .back-button img {
-        width: 24px; /* Adjust size as needed */
+        width: 24px;
         height: auto;
     }
 
     .logo-text {
-        font-family: 'Arial', sans-serif; /* Choose appropriate font */
-        font-size: 28px; /* Adjust size as needed */
+        font-size: 24px; /* Slightly reduced logo size for better fit */
         font-weight: bold;
-        color: #e9d4a3; /* Same as your h1 color */
+        color: #e9d4a3;
         text-decoration: none;
     }
 
     .page-counter {
-        font-family: 'Arial', sans-serif;
-        font-size: 15px;
-        color: #ced1c9;
+        font-size: 14px; /* Slightly reduced page counter size */
     }
 
     .principal {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 500px;
-  
+        width: 100%; /* Take full width within nav-second */
     }
 
     .nav-second{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 500px;
-        flex-direction: column;
+        flex-direction: column; /* Stack items vertically in nav-second */
+        width: 90vw; /* Responsive width */
+        max-width: 500px;
     }
+
      .progress-bar {
-        margin-top: 20px;
+        margin-top: 15px; /* Reduced margin */
         width: 100%;
-        height: 7px;
-        background-color: #1e293b; /* cor de fundo escura */
+        height: 5px; /* Reduced height */
+        background-color: #1e293b;
         border-radius: 9999px;
         overflow: hidden;
       }
 
       .progress-bar-fill {
-        width: 100%; /* Altere este valor para mudar a porcentagem (0-100) */
+        width: 100%;
         height: 100%;
-        background-color: #10b981; /* cor verde */
+        background-color: #10b981;
         border-radius: 9999px;
         transition: width 0.3s ease-in-out;
       }
@@ -100,111 +94,135 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin-top: 20px; /* Reduced margin */
       }
 
       .titulo-destino{
-        margin-top: 50px;
+        margin-top: 20px; /* Reduced margin */
         color: #e9d4a3;
         text-align: center;
-        font-size: 30px;
+        font-size: 26px; /* Reduced title size */
+        margin-bottom: 10px; /* Added bottom margin */
       }
 
       .texto-aniversario {
-        color: #ced1c9;
         text-align: center;
-
-        font-size: 20px;
+        font-size: 18px; /* Reduced text size */
       }
 
-      .imagem-mao{
-      
-        display: flex;
+    .camera-container {
+         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 20px;
-        margin-bottom: 500px;
-      }
-
-      .mao {
-
-        width: 200px;
-      
-      }
-
-   
+         margin-top: 15px; /* Reduced margin */
+        position: relative;
+        width: 90vw;
+        max-width: 500px;
+        height: 70vw; /* Height relative to width for square-like area */
+          max-height: 500px;
+       }
+     .camera-container.active{
+         height: auto; /* Adjust height when active if needed */
+       }
+        #cameraPreview {
+           position: relative;
+        width: 100%;
+        height: 100%;
+           display: flex;
+          align-items: center;
+          justify-content: center;
+           overflow: hidden;
+           border-radius: 10px; /* Optional: Rounded corners for camera preview */
+       }
+       #handOverlay {
+           position: absolute;
+            top: 0;
+           width: 50%;
+            height: 100%;
+           object-fit:cover;
+           pointer-events: none;
+        }
+      .button-area {
+         display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+           margin-top: 20px; /* Adjusted margin */
+           flex-direction: column;
+           }
       .continue-button {
-       margin-top: 100px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 16px; /* Reduced button text size */
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            background-color: #17cfbc;
+            border: 2px solid white;
+            border-radius: 50%;
+            width: 80px; /* Reduced button size */
+            height: 80px; /* Reduced button size */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+         }
+          .continue-button:hover {
+            background-color: #00847C;
+            color: rgba(255, 255, 255, 1);
+          }
+          .continue-button:active {
+            transform: scale(0.98);
+          }
+    .continue-button2 {
         background-color: #17cfbc;
         color: rgba(255, 255, 255, 0.8);
         border: none;
         border-radius: 25px;
-        padding-block: 8px;
-        font-size: 18px;
-        font-family: Arial, sans-serif;
+        padding: 8px 20px; /* Adjusted padding */
+        font-size: 16px; /* Reduced button2 text size */
         cursor: pointer;
-        width: 100%;
+        width: auto; /* Auto width for button2 */
+        min-width: 200px; /* Minimum width for button2 */
         max-width: 400px;
         text-align: center;
         transition: all 0.3s ease;
-        margin-bottom: 10px;
-      }
-      .continue-button:hover {
+        text-decoration: none;
+        display: inline-block;
+        box-sizing: border-box; /* Ensure padding is included in width */
+    }
+
+    .continue-button2:hover {
         background-color: #00847C;
         color: rgba(255, 255, 255, 1);
-      }
-      
-      .continue-button:active {
+    }
+
+    .continue-button2:active {
         transform: scale(0.98);
-      }
-
-
-      .continue-button2 {
-    background-color: #17cfbc;
-    color: rgba(255, 255, 255, 0.8);
-    border: none;
-    border-radius: 25px;
-    padding-block: 8px;
-    font-size: 18px;
-    font-family: Arial, sans-serif;
-    cursor: pointer;
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-    transition: all 0.3s ease;
-    text-decoration: none; /* Remove o sublinhado */
-    display: inline-block;  /* Para o padding e o max-width funcionarem */
-}
-
-.continue-button2:hover {
-    background-color: #00847C;
-    color: rgba(255, 255, 255, 1);
-}
-
-.continue-button2:active {
-    transform: scale(0.98);
-}
-
+    }
 @media (max-width: 600px) {
-
-.principal{
-width: 90vw;
-} 
-
-.nav-second{
-  width: 90vw;
+.nav-second, .principal, .camera-container, .conteudo, .button-area {
+width: 95vw; /* Further responsiveness for very small screens */
 }
-
-.container{
-  width: 90vw;
+.titulo-destino{
+    font-size: 1.5rem; /* Adjust title size for smaller screens */
 }
-
-} 
-
-</style>
+.texto-aniversario {
+    font-size: 1rem; /* Adjust text size for smaller screens */
+}
+.logo-text {
+    font-size: 1.6rem; /* Adjust logo size for smaller screens */
+}
+.page-counter {
+    font-size: 0.9rem; /* Adjust page counter size for smaller screens */
+}
+}
+    </style>
+</head>
 <body>
-
     <nav class="nav-second">
-        
+
         <div class="principal">
             <button class="back-button">
                 <a href="pagina-cores.html" class="back-button-link">
@@ -220,73 +238,101 @@ width: 90vw;
 
         </div>
 
-      
+
             <div class="progress-bar">
                 <div class="progress-bar-fill"></div>
               </div>
 
               <div class="conteudo">
                 <h2 class="titulo-destino">Tire uma foto da palma de sua mão
-                    <br> 
+                    <br>
                   esquerda
-
                 </h2>
-
+                <p class="texto-aniversario">Posicione sua mão sobre a imagem guia e pressione "Iniciar Câmera"</p>
               </div>
 
-                  <imagem-mao>
-                    <img class="mao" src="https://i.imgur.com/reHdgYU.png" alt="">
-                  </imagem-mao>
+               <div class="camera-container" id="cameraContainer">
+               <div id="cameraPreview" >
+                 <img id="handOverlay" src="https://sub.astroline.today/static/media/shape.8e5e1cffb28474ee3111.webp" alt="Hand Overlay" >
+                 </div>
 
-                  <button class="continue-button">
-                    <input type="file" id="fileInput" accept="image/*" style="display: none;">
-                    Enviar foto
-                    </button>
+            </div>
 
-                    <a class="continue-button2" href="pagina-mao-tirarFoto.html">Tirar Foto</a>
-
+                <div class="button-area">
+                <a href="#" id="startCameraButton" class="continue-button"></a>
+                <a href="#" id="takePhotoButton" class="continue-button" style="display: none;"></a>
+                 </div>
     </nav>
 
-    
-
     <script>
-      let selectedCount = 0;
-      const maxSelections = 3;
-      const countDisplay = document.getElementById('count');
-  
-      function toggleSelection(button) {
-        if (button.classList.contains('selected')) {
-          button.classList.remove('selected');
-          selectedCount--;
-        } else if (selectedCount < maxSelections) {
-          button.classList.add('selected');
-          selectedCount++;
-        }
-        countDisplay.textContent = selectedCount;
-      }
+      document.addEventListener('DOMContentLoaded', function() {
+      const startCameraButton = document.getElementById('startCameraButton');
+      const takePhotoButton = document.getElementById('takePhotoButton');
+      const cameraPreview = document.getElementById('cameraPreview');
+      const cameraContainer = document.getElementById('cameraContainer');
+      let videoElement = null;
+      let cameraStream = null;
 
-      const fileInput = document.getElementById('fileInput');
-    const continueButton = document.querySelector('.continue-button');
+      startCameraButton.addEventListener('click', function(event) {
+          event.preventDefault();
+           if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                  let constraints = {
+                       video: {
+                               facingMode: 'user',
+                               width: { ideal: 640 },
+                               height: { ideal: 480 },
+                          },
+                     }
+              navigator.mediaDevices.getUserMedia(constraints)
+                  .then(function(stream) {
+                          cameraStream = stream;
+                          cameraContainer.classList.add('active')
+                           videoElement = document.createElement('video');
+                            videoElement.srcObject = stream;
+                                videoElement.setAttribute('playsinline', true);
+                                videoElement.muted = true;
+                            videoElement.load();
+                            videoElement.play();
+                            videoElement.style.width = '100%'
+                            videoElement.style.height = '100%'
+                              cameraPreview.appendChild(videoElement);
+
+                              startCameraButton.style.display = 'none';
+                              takePhotoButton.style.display = 'inline-block';
 
 
-     continueButton.addEventListener('click', function(e){
-        fileInput.click();
-     })
+                 })
+              .catch(function(error) {
+                  console.error('Error accessing camera:', error);
+                  alert('Falha ao acessar a câmera.');
+                   window.location.href = 'agina-pagamento.html';
+              });
+           } else {
+                alert('getUserMedia não é suportado.');
+               window.location.href = 'agina-pagamento.html';
+             }
+      });
 
+      takePhotoButton.addEventListener('click', function(event) {
+          event.preventDefault();
+          if (videoElement && cameraStream) {
+              const canvas = document.createElement('canvas');
+              canvas.width = videoElement.videoWidth;
+              canvas.height = videoElement.videoHeight;
+                  const ctx = canvas.getContext('2d');
+                   ctx.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+                  const imageDataURL = canvas.toDataURL('image/png');
+          localStorage.setItem('selectedImage', imageDataURL);
 
-    fileInput.addEventListener('change', function(e) {
-        const file = e.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = function(event) {
-                localStorage.setItem('selectedImage', event.target.result);
-                window.location.href = 'pagina-pagamento.html'; // Substitua pelo nome da sua próxima página
-            };
-            reader.readAsDataURL(file);
-        }
-    });
+           cameraStream.getTracks().forEach(track => track.stop());
+             cameraPreview.removeChild(videoElement);
+             videoElement = null;
+             cameraStream = null;
 
-    
-    </script>
+             window.location.href = 'pagina-pagamento.html';
+          }
+      });
+   });
+</script>
 </body>
 </html>
